@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi novia 💗</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+ body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, sans-serif;
+    color: white;
+    background: radial-gradient(circle, #64235e, #170c2e 75%);
+    overflow: hidden;
+ }
+
+ .fondo {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+ }
+
+ .corazon {
+    position: absolute;
+    bottom: -40px;
+    color: #ff8bdc;
+    font-size: 22px;
+    animation: flotar 7s linear infinite;
+ }
+
+ @keyframes flotar {
+    to {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+ }
+ 
+ .contenedor {
+    width: min(340px, 90vw);
+    text-align: center;
+    z-index: 2;
+ }
+
+ h1 {
+    color: #ffe0f5;
+    font-size: 15px;
+    text-shadow: 0 0 15px #ff42cb;
+ }
+
+ .subtitulo {
+    color: #ffe0f5;
+    font-size: 15px;
+    margin-bottom: 35px;
+ }
+
+ .sobre {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    background: #ff83c8;
+    border-radius: 5px;
+    box-shadow: 0 0 30px #ff40c7;
+    cursor: pointer;
+    perspective: 800px;
+    margin-top: 60px;
+ }
+ 
+ .base {
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    height: 175px;
+    top: -5px;
+    padding: 18px 12px;
+    overflow: hidden;
+    color: #85245f;
+    background: #fff0f8;
+    border-radius: 8px;
+    transition:  transform 1s ease, height 1s ease;
+    z-index: 2;
+ }
+ .carta h2 {
+    font-size: 21px;
+    margin: 0 0 12px;
+ }
+
+ .carta p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+ }
+
+ .tapa {
+    position: absolute;
+    inset: 0;
+    background: #ffb2df;
+    clip-path: polygon(0 0, 100% 0, 50% 60%);
+    transform-origin:top ;
+    transition: transform 0.7s ease;
+    z-index: 4;
+ }
+
+ .sello {
+    position: absolute;
+    top: 72px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 42px;
+    z-index: 5;
+    filter: drop-shadow(0 0 8px #ff168f);
+    transition: opacity 0.3s;
+ }
+
+ .solapa {
+    position: absolute;
+    inset: 0;
+    background: #ff73bd;
+    clip-path: polygon(0 100%, 0 0, 50% 58%, 100% 0, 100% 100%);
+    z-index: 3;
+    border-radius: 5px;
+ }
+
+ .sobre.abierto .tapa {
+    transform: rotateX(180deg);
+    z-index: 1;
+ }
+
+ .sobre.abierto .carta {
+    height: 340px;
+    transform: rotateY(-240px);
+    overflow-y: auto;
+    z-index: 6;
+    box-shadow: 0 0 25px #ff77d5;
+ }
+
+ button {
+    margin-top: 28px;
+    border: 1px solid #ffb6e8;
+    background: #ff65bd;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #ff4dc9;
+ }
+
+ button:hover {
+    background: #ff8bd1;
+ }
+
+ .pie {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #ffc9eb;
+ }
+ </style>
+</head>
+
+<body>
+<div class="fondo" id="fondo"></div>
+<div class="contenedor">
+    <h1>Para mi novia 💗</h1>
+    <p class="subtitulo">Hice algo pequeñito para ti...🥹 </p>
+    <div class="sobre" id="sobre" onclick="abrirCartas()">
+        <div class="base"></div>
+        <div class="carta">
+            <h2>Para ti, mi amor 🥹</h2>
+            <p>
+                Holaaaaa, mi niña hermosa 🥹
+                <br><br>
+                Queria recordarte lo mucho que te amo y lo feliz que me hace tenerte en mi vida
+                <br><br>
+                Grcias por cada sonrisa, cada brazo, cada momento bonito y por ser esa personita tan especial para mi
+                <br><br>
+                Si pudiera elegir una y mil veces, volveria a elegirte a ti, porque no necesito que todo sea perfecto, solo quiero seguir compartiendo mis días contigo
+                <br><br>
+                Eres mi lugar bonito, mi tranquilidad y una de mis razones para sonreir
+                <br><br>
+                Nunca olvides lo muchismo que vales y lo especial que eres para mi 
+                <br><br>
+                Te amo hoy, mañana y en todos los días que la vida nos permite compartir 🥹💗
+                <br><br>
+                Con todo mi amoor 🥹💗
+                <br>
+                Tu persona favorita 🥹💗
+            </p>
+        </div>
+
+        <div class="tapa"></div>
+        <div class="solapa"></ddiv>
+        <div class="sello">💗</div>
+    </div>
+
+    <button onclick="abrirCartas()">Abrir mi cartita🥹💗</button>
+    
+    <p class="pie">Hecha con mucho amor, solo para ti 🥹</p>
+    </div>
+
+    <script>
+        const sobre = document.getElementById("sobre");
+        let abierta = false;
+        function abirCarta() {
+            abierta = !abierta;
+            sobre.classList.toggle("abierto", abierta);
+            document.querySelector("button").textContent = abierta? "Cerra cartita 💗": "Abrir mi carta  🥹";
+        }
+    // Coranzoncitos que aprecen en el fondo
+    function creaCorazon() { 
+        const corazon = document.createElement("span");
+        corazon.className = "corazon";
+        corazon.textContent = ["❤️", "💕", "💗"][Math.floor(Math.random()* 4)];
+        corazon.style.left = Math.random()* 100 + "vw";
+        corazon.style.animationDuration = (4 + Math.random() * 5) + "s";
+        corazon.style.fontSize = (15 + Math.random() * 20) + "px";
+        document.getElementById("fondo").appendChild(corazon);
+        setTimeout(() => corazon.remover(), 9000);
+    }
+
+    setInterval(creaCorazon, 350);
+</script>
+    
+</body>
+</html>
